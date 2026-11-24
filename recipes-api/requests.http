@@ -1,0 +1,41 @@
+### Расширение REST Client (VS Code) / HTTP Client (PhpStorm). Замените логин в заголовке Client.
+@host = http://127.0.0.1:8000/api
+@client = your_login
+
+### Регистрация
+POST {{host}}/register
+Content-Type: application/json
+Accept: application/json
+Client: {{client}}
+
+{ "email": "new@example.com", "name": "Тест", "password": "password123" }
+
+### Авторизация → скопируйте token
+POST {{host}}/login
+Content-Type: application/json
+Accept: application/json
+Client: {{client}}
+
+{ "email": "user@example.com", "password": "password123" }
+
+### Список (новые сверху); сортировка: ?sort=calories&order=asc
+GET {{host}}/recipes?sort=time&order=asc
+Accept: application/json
+Client: {{client}}
+
+### Конструктор: рецепты, где есть яйца (8) и молоко (9)
+GET {{host}}/recipes?ingredients[]=8&ingredients[]=9
+Accept: application/json
+Client: {{client}}
+
+### Свои рецепты
+GET {{host}}/my/recipes
+Accept: application/json
+Client: {{client}}
+Authorization: Bearer ВАШ_ТОКЕН
+
+### Удаление (чужой → 403)
+DELETE {{host}}/recipes/1
+Accept: application/json
+Client: {{client}}
+Authorization: Bearer ВАШ_ТОКЕН

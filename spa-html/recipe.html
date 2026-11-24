@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Борщ — Кухни мира</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body class="is-auth">
+<!-- Шапка: блоки .only-guest / .only-auth в SPA заменить на v-if / условный рендер по наличию токена -->
+<header class="header">
+    <div class="container">
+        <a class="brand" href="index.html">🍲 Кухни мира</a>
+        <nav class="nav">
+            <a href="index.html" class="active">Рецепты</a>
+            <a href="constructor.html">Конструктор</a>
+            <span class="only-auth" style="display:contents"><a href="my-recipes.html">Мои рецепты</a></span>
+        </nav>
+        <div class="user-box only-auth">
+            <a class="btn btn-sm" href="recipe-form.html">+ Новый рецепт</a>
+            <a class="btn btn-light btn-sm" href="login.html">Выйти</a>
+        </div>
+        <div class="user-box only-guest">
+            <a class="btn btn-light btn-sm" href="login.html">Войти</a>
+            <a class="btn btn-sm" href="register.html">Регистрация</a>
+        </div>
+    </div>
+</header>
+<main class="page">
+    <div class="container">
+        <p><a href="index.html">← Ко всем рецептам</a></p>
+        <div class="recipe-view">
+            <img src="../prof/src/assets/img/r1.svg" alt="Борщ">
+            <div>
+                <h1>Борщ</h1>
+                <div class="meta"><span class="chip">🔥 320 ккал</span><span class="chip">⏱ 120 мин</span></div>
+                <p>Классический борщ на говяжьем бульоне со свёклой, капустой и сметаной. Насыщенный вкус и яркий цвет.</p>
+                <h3>Ингредиенты</h3>
+                <ul class="ing-list"><li>Говядина</li><li>Свёкла</li><li>Картофель</li><li>Морковь</li><li>Лук</li><li>Капуста</li><li>Сметана</li></ul>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">© Кухни мира</footer>
+
+<script src="../prof/src/assets/js/app.js"></script>
+</body>
+</html>

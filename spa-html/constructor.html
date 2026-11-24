@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Конструктор — Кухни мира</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body class="is-auth">
+<!-- Шапка: блоки .only-guest / .only-auth в SPA заменить на v-if / условный рендер по наличию токена -->
+<header class="header">
+    <div class="container">
+        <a class="brand" href="index.html">🍲 Кухни мира</a>
+        <nav class="nav">
+            <a href="index.html">Рецепты</a>
+            <a href="constructor.html" class="active">Конструктор</a>
+            <span class="only-auth" style="display:contents"><a href="my-recipes.html">Мои рецепты</a></span>
+        </nav>
+        <div class="user-box only-auth">
+            <a class="btn btn-sm" href="recipe-form.html">+ Новый рецепт</a>
+            <a class="btn btn-light btn-sm" href="login.html">Выйти</a>
+        </div>
+        <div class="user-box only-guest">
+            <a class="btn btn-light btn-sm" href="login.html">Войти</a>
+            <a class="btn btn-sm" href="register.html">Регистрация</a>
+        </div>
+    </div>
+</header>
+<main class="page">
+    <div class="container">
+        <div class="page-head"><h1>Конструктор рецептов</h1></div>
+        <div class="builder">
+            <section class="panel">
+                <h2>Ингредиенты</h2>
+                <p class="muted" style="margin:0 0 12px;font-size:14px">Перетащите нужные в область справа (на телефоне — двойной тап)</p>
+                <div class="ing-pool" id="pool"><span class="ing" data-id="1" data-name="Говядина">Говядина</span><span class="ing" data-id="2" data-name="Свёкла">Свёкла</span><span class="ing" data-id="3" data-name="Картофель">Картофель</span><span class="ing" data-id="4" data-name="Морковь">Морковь</span><span class="ing" data-id="5" data-name="Лук">Лук</span><span class="ing" data-id="6" data-name="Капуста">Капуста</span><span class="ing" data-id="7" data-name="Тесто">Тесто</span><span class="ing" data-id="8" data-name="Яйца">Яйца</span><span class="ing" data-id="9" data-name="Молоко">Молоко</span><span class="ing" data-id="10" data-name="Мука">Мука</span><span class="ing" data-id="11" data-name="Сметана">Сметана</span><span class="ing" data-id="12" data-name="Рис">Рис</span></div>
+            </section>
+            <section class="panel">
+                <h2>Ваши ингредиенты</h2>
+                <div class="dropzone" id="dropzone"><span class="placeholder">Перетащите ингредиенты сюда</span></div>
+            </section>
+        </div>
+        <h2 id="results-count" style="margin-bottom:16px;font-size:22px">Добавьте ингредиенты, чтобы увидеть рецепты</h2>
+        <div class="grid" id="results">
+        <article class="recipe-card" data-date="1" data-time="120" data-cal="320" data-ingredients="1,2,3,4,5,6,11" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r1.svg" alt="Борщ"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Борщ</a></h3>
+                <p>Классический борщ на говяжьем бульоне со свёклой, капустой и сметаной. Насыщенный вкус и яркий цвет.</p>
+                <div class="meta"><span class="chip">🔥 320 ккал</span><span class="chip">⏱ 120 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="2" data-time="25" data-cal="230" data-ingredients="8,9,10" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r2.svg" alt="Блины"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Блины</a></h3>
+                <p>Тонкие ажурные блины на молоке. Подходят и с вареньем, и со сметаной, и с мясной начинкой.</p>
+                <div class="meta"><span class="chip">🔥 230 ккал</span><span class="chip">⏱ 25 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="3" data-time="80" data-cal="450" data-ingredients="1,4,5,12" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r3.svg" alt="Плов"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Плов</a></h3>
+                <p>Рассыпчатый плов с говядиной, морковью и луком. Готовится в казане на медленном огне.</p>
+                <div class="meta"><span class="chip">🔥 450 ккал</span><span class="chip">⏱ 80 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="4" data-time="15" data-cal="180" data-ingredients="3,8,11" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r4.svg" alt="Окрошка"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Окрошка</a></h3>
+                <p>Освежающий холодный суп с овощами и яйцом. Идеален в жаркий день.</p>
+                <div class="meta"><span class="chip">🔥 180 ккал</span><span class="chip">⏱ 15 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="5" data-time="150" data-cal="380" data-ingredients="1,5,7,8,10" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r5.svg" alt="Пельмени"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Пельмени</a></h3>
+                <p>Домашние пельмени с мясной начинкой и тонким тестом. Лепить лучше всей семьёй.</p>
+                <div class="meta"><span class="chip">🔥 380 ккал</span><span class="chip">⏱ 150 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="6" data-time="10" data-cal="210" data-ingredients="8,9" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r6.svg" alt="Омлет"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Омлет</a></h3>
+                <p>Воздушный омлет на молоке за 10 минут. Простой завтрак на каждый день.</p>
+                <div class="meta"><span class="chip">🔥 210 ккал</span><span class="chip">⏱ 10 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="7" data-time="110" data-cal="290" data-ingredients="1,5,6,12" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r7.svg" alt="Голубцы"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Голубцы</a></h3>
+                <p>Нежные голубцы в капустных листьях с мясом и рисом, томлёные в сметанном соусе.</p>
+                <div class="meta"><span class="chip">🔥 290 ккал</span><span class="chip">⏱ 110 мин</span></div>
+            </div>
+            
+        </article>
+        <article class="recipe-card" data-date="8" data-time="30" data-cal="270" data-ingredients="8,10,11" hidden>
+            <a href="recipe.html"><img src="../prof/src/assets/img/r8.svg" alt="Сырники"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Сырники</a></h3>
+                <p>Румяные сырники с хрустящей корочкой и нежной серединой. Подавать со сметаной.</p>
+                <div class="meta"><span class="chip">🔥 270 ккал</span><span class="chip">⏱ 30 мин</span></div>
+            </div>
+            
+        </article>
+            <p class="empty" id="results-empty" hidden>Рецептов с такими ингредиентами не найдено</p>
+        </div>
+    </div>
+</main>
+<footer class="footer">© Кухни мира</footer>
+
+<script src="../prof/src/assets/js/app.js"></script>
+</body>
+</html>

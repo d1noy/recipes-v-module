@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Новый рецепт — Кухни мира</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body class="is-auth">
+<!-- Шапка: блоки .only-guest / .only-auth в SPA заменить на v-if / условный рендер по наличию токена -->
+<header class="header">
+    <div class="container">
+        <a class="brand" href="index.html">🍲 Кухни мира</a>
+        <nav class="nav">
+            <a href="index.html">Рецепты</a>
+            <a href="constructor.html">Конструктор</a>
+            <span class="only-auth" style="display:contents"><a href="my-recipes.html" class="active">Мои рецепты</a></span>
+        </nav>
+        <div class="user-box only-auth">
+            <a class="btn btn-sm" href="recipe-form.html">+ Новый рецепт</a>
+            <a class="btn btn-light btn-sm" href="login.html">Выйти</a>
+        </div>
+        <div class="user-box only-guest">
+            <a class="btn btn-light btn-sm" href="login.html">Войти</a>
+            <a class="btn btn-sm" href="register.html">Регистрация</a>
+        </div>
+    </div>
+</header>
+<main class="page">
+    <div class="container">
+        <div class="page-head"><h1>Новый рецепт</h1></div>
+        <!-- Ошибки с сервера: .field.has-error + <p class="error-text"> под полем; демо — ?errors=1 -->
+        <form class="card form" method="POST" action="#" enctype="multipart/form-data" novalidate>
+            <div class="field">
+                <label for="title">Название</label>
+                <input id="title" name="title" type="text" value="" placeholder="Например, Борщ" data-demo-error="Укажите название рецепта.">
+            </div>
+            <div class="field">
+                <label for="description">Описание</label>
+                <textarea id="description" name="description" data-demo-error="Описание обязательно для заполнения."></textarea>
+            </div>
+            <div class="grid-2">
+                <div class="field">
+                <label for="calories">Калорийность (ккал)</label>
+                <input id="calories" name="calories" type="number" value="" placeholder="" min="0" data-demo-error="Калорийность должна быть числом.">
+            </div>
+                <div class="field">
+                <label for="cooking_time">Время приготовления (мин)</label>
+                <input id="cooking_time" name="cooking_time" type="number" value="" placeholder="" min="1" data-demo-error="Укажите время приготовления.">
+            </div>
+            </div>
+            <div class="field">
+                <label for="image">Изображение</label>
+                <input id="image" name="image" type="file" accept="image/*" data-demo-error="Загрузите изображение.">
+                <img class="img-preview" id="image-preview" src="" alt="" hidden>
+            </div>
+            <fieldset class="field">
+                <legend>Ингредиенты</legend>
+                <div class="check-grid" data-demo-error="Выберите хотя бы один ингредиент."><label class="check"><input type="checkbox" name="ingredients[]" value="1"> Говядина</label><label class="check"><input type="checkbox" name="ingredients[]" value="2"> Свёкла</label><label class="check"><input type="checkbox" name="ingredients[]" value="3"> Картофель</label><label class="check"><input type="checkbox" name="ingredients[]" value="4"> Морковь</label><label class="check"><input type="checkbox" name="ingredients[]" value="5"> Лук</label><label class="check"><input type="checkbox" name="ingredients[]" value="6"> Капуста</label><label class="check"><input type="checkbox" name="ingredients[]" value="7"> Тесто</label><label class="check"><input type="checkbox" name="ingredients[]" value="8"> Яйца</label><label class="check"><input type="checkbox" name="ingredients[]" value="9"> Молоко</label><label class="check"><input type="checkbox" name="ingredients[]" value="10"> Мука</label><label class="check"><input type="checkbox" name="ingredients[]" value="11"> Сметана</label><label class="check"><input type="checkbox" name="ingredients[]" value="12"> Рис</label></div>
+            </fieldset>
+            <div class="form-actions">
+                <button class="btn" type="submit">Опубликовать</button>
+                <a class="btn btn-light" href="my-recipes.html">Отмена</a>
+            </div>
+        </form>
+    </div>
+</main>
+<footer class="footer">© Кухни мира</footer>
+
+<script src="../prof/src/assets/js/app.js"></script>
+</body>
+</html>

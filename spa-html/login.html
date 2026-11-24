@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход — Кухни мира</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body class="is-guest">
+<!-- Шапка: блоки .only-guest / .only-auth в SPA заменить на v-if / условный рендер по наличию токена -->
+<header class="header">
+    <div class="container">
+        <a class="brand" href="index.html">🍲 Кухни мира</a>
+        <nav class="nav">
+            <a href="index.html">Рецепты</a>
+            <a href="constructor.html">Конструктор</a>
+            <span class="only-auth" style="display:contents"><a href="my-recipes.html">Мои рецепты</a></span>
+        </nav>
+        <div class="user-box only-auth">
+            <a class="btn btn-sm" href="recipe-form.html">+ Новый рецепт</a>
+            <a class="btn btn-light btn-sm" href="login.html">Выйти</a>
+        </div>
+        <div class="user-box only-guest">
+            <a class="btn btn-light btn-sm" href="login.html">Войти</a>
+            <a class="btn btn-sm" href="register.html">Регистрация</a>
+        </div>
+    </div>
+</header>
+<main class="page">
+    <div class="container">
+        <form class="card auth-card" method="POST" action="#" novalidate>
+            <h1>Вход</h1>
+            <p class="muted" style="margin:0 0 24px">Войдите, чтобы создавать и редактировать рецепты</p>
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" value="" placeholder="you@example.com" data-demo-error="Поле email обязательно для заполнения.">
+            </div><div class="field">
+                <label for="password">Пароль</label>
+                <input id="password" name="password" type="password" value="" placeholder="" data-demo-error="Поле «Пароль» обязательно для заполнения.">
+            </div>
+            <button class="btn btn-block" type="submit">Войти</button>
+            <div class="form-alert" data-demo hidden>Неверный email или пароль</div>
+            <p class="form-foot">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+        </form>
+    </div>
+</main>
+<footer class="footer">© Кухни мира</footer>
+
+<script src="../prof/src/assets/js/app.js"></script>
+</body>
+</html>

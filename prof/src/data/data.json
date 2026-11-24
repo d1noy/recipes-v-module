@@ -1,0 +1,192 @@
+{
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Говядина"
+    },
+    {
+      "id": 2,
+      "name": "Свёкла"
+    },
+    {
+      "id": 3,
+      "name": "Картофель"
+    },
+    {
+      "id": 4,
+      "name": "Морковь"
+    },
+    {
+      "id": 5,
+      "name": "Лук"
+    },
+    {
+      "id": 6,
+      "name": "Капуста"
+    },
+    {
+      "id": 7,
+      "name": "Тесто"
+    },
+    {
+      "id": 8,
+      "name": "Яйца"
+    },
+    {
+      "id": 9,
+      "name": "Молоко"
+    },
+    {
+      "id": 10,
+      "name": "Мука"
+    },
+    {
+      "id": 11,
+      "name": "Сметана"
+    },
+    {
+      "id": 12,
+      "name": "Рис"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Борщ",
+      "description": "Классический борщ на говяжьем бульоне со свёклой, капустой и сметаной. Насыщенный вкус и яркий цвет.",
+      "calories": 320,
+      "cooking_time": 120,
+      "image": "assets/img/r1.svg",
+      "ingredients": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        11
+      ],
+      "created_at": "2026-10-11T12:00:00Z",
+      "mine": true
+    },
+    {
+      "id": 2,
+      "title": "Блины",
+      "description": "Тонкие ажурные блины на молоке. Подходят и с вареньем, и со сметаной, и с мясной начинкой.",
+      "calories": 230,
+      "cooking_time": 25,
+      "image": "assets/img/r2.svg",
+      "ingredients": [
+        8,
+        9,
+        10
+      ],
+      "created_at": "2026-10-12T12:00:00Z",
+      "mine": true
+    },
+    {
+      "id": 3,
+      "title": "Плов",
+      "description": "Рассыпчатый плов с говядиной, морковью и луком. Готовится в казане на медленном огне.",
+      "calories": 450,
+      "cooking_time": 80,
+      "image": "assets/img/r3.svg",
+      "ingredients": [
+        1,
+        4,
+        5,
+        12
+      ],
+      "created_at": "2026-10-13T12:00:00Z",
+      "mine": false
+    },
+    {
+      "id": 4,
+      "title": "Окрошка",
+      "description": "Освежающий холодный суп с овощами и яйцом. Идеален в жаркий день.",
+      "calories": 180,
+      "cooking_time": 15,
+      "image": "assets/img/r4.svg",
+      "ingredients": [
+        3,
+        8,
+        11
+      ],
+      "created_at": "2026-10-14T12:00:00Z",
+      "mine": false
+    },
+    {
+      "id": 5,
+      "title": "Пельмени",
+      "description": "Домашние пельмени с мясной начинкой и тонким тестом. Лепить лучше всей семьёй.",
+      "calories": 380,
+      "cooking_time": 150,
+      "image": "assets/img/r5.svg",
+      "ingredients": [
+        1,
+        5,
+        7,
+        8,
+        10
+      ],
+      "created_at": "2026-10-15T12:00:00Z",
+      "mine": false
+    },
+    {
+      "id": 6,
+      "title": "Омлет",
+      "description": "Воздушный омлет на молоке за 10 минут. Простой завтрак на каждый день.",
+      "calories": 210,
+      "cooking_time": 10,
+      "image": "assets/img/r6.svg",
+      "ingredients": [
+        8,
+        9
+      ],
+      "created_at": "2026-10-16T12:00:00Z",
+      "mine": true
+    },
+    {
+      "id": 7,
+      "title": "Голубцы",
+      "description": "Нежные голубцы в капустных листьях с мясом и рисом, томлёные в сметанном соусе.",
+      "calories": 290,
+      "cooking_time": 110,
+      "image": "assets/img/r7.svg",
+      "ingredients": [
+        1,
+        5,
+        6,
+        12
+      ],
+      "created_at": "2026-10-17T12:00:00Z",
+      "mine": false
+    },
+    {
+      "id": 8,
+      "title": "Сырники",
+      "description": "Румяные сырники с хрустящей корочкой и нежной серединой. Подавать со сметаной.",
+      "calories": 270,
+      "cooking_time": 30,
+      "image": "assets/img/r8.svg",
+      "ingredients": [
+        8,
+        10,
+        11
+      ],
+      "created_at": "2026-10-18T12:00:00Z",
+      "mine": true
+    }
+  ],
+  "user": {
+    "email": "user@example.com",
+    "name": "Анна"
+  },
+  "ws_event_example": {
+    "event": "recipe.created",
+    "data": {
+      "id": 9,
+      "title": "Сырники со сметаной"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Мои рецепты — Кухни мира</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body class="is-auth">
+<!-- Шапка: блоки .only-guest / .only-auth в SPA заменить на v-if / условный рендер по наличию токена -->
+<header class="header">
+    <div class="container">
+        <a class="brand" href="index.html">🍲 Кухни мира</a>
+        <nav class="nav">
+            <a href="index.html">Рецепты</a>
+            <a href="constructor.html">Конструктор</a>
+            <span class="only-auth" style="display:contents"><a href="my-recipes.html" class="active">Мои рецепты</a></span>
+        </nav>
+        <div class="user-box only-auth">
+            <a class="btn btn-sm" href="recipe-form.html">+ Новый рецепт</a>
+            <a class="btn btn-light btn-sm" href="login.html">Выйти</a>
+        </div>
+        <div class="user-box only-guest">
+            <a class="btn btn-light btn-sm" href="login.html">Войти</a>
+            <a class="btn btn-sm" href="register.html">Регистрация</a>
+        </div>
+    </div>
+</header>
+<main class="page">
+    <div class="container">
+        <div class="page-head">
+            <h1>Мои рецепты</h1>
+            <a class="btn" href="recipe-form.html">+ Новый рецепт</a>
+        </div>
+        <div class="grid">
+        <article class="recipe-card" data-date="8" data-time="30" data-cal="270">
+            <a href="recipe.html"><img src="../prof/src/assets/img/r8.svg" alt="Сырники"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Сырники</a></h3>
+                <p>Румяные сырники с хрустящей корочкой и нежной серединой. Подавать со сметаной.</p>
+                <div class="meta"><span class="chip">🔥 270 ккал</span></div>
+            </div>
+            <div class="card-actions">
+                    <a class="btn btn-light btn-sm" href="recipe-edit.html">✏️ Изменить</a>
+                    <button class="btn btn-danger btn-sm" type="button" data-delete="Сырники">🗑 Удалить</button>
+                </div>
+        </article>
+        <article class="recipe-card" data-date="6" data-time="10" data-cal="210">
+            <a href="recipe.html"><img src="../prof/src/assets/img/r6.svg" alt="Омлет"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Омлет</a></h3>
+                <p>Воздушный омлет на молоке за 10 минут. Простой завтрак на каждый день.</p>
+                <div class="meta"><span class="chip">🔥 210 ккал</span></div>
+            </div>
+            <div class="card-actions">
+                    <a class="btn btn-light btn-sm" href="recipe-edit.html">✏️ Изменить</a>
+                    <button class="btn btn-danger btn-sm" type="button" data-delete="Омлет">🗑 Удалить</button>
+                </div>
+        </article>
+        <article class="recipe-card" data-date="2" data-time="25" data-cal="230">
+            <a href="recipe.html"><img src="../prof/src/assets/img/r2.svg" alt="Блины"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Блины</a></h3>
+                <p>Тонкие ажурные блины на молоке. Подходят и с вареньем, и со сметаной, и с мясной начинкой.</p>
+                <div class="meta"><span class="chip">🔥 230 ккал</span></div>
+            </div>
+            <div class="card-actions">
+                    <a class="btn btn-light btn-sm" href="recipe-edit.html">✏️ Изменить</a>
+                    <button class="btn btn-danger btn-sm" type="button" data-delete="Блины">🗑 Удалить</button>
+                </div>
+        </article>
+        <article class="recipe-card" data-date="1" data-time="120" data-cal="320">
+            <a href="recipe.html"><img src="../prof/src/assets/img/r1.svg" alt="Борщ"></a>
+            <div class="body">
+                <h3><a href="recipe.html">Борщ</a></h3>
+                <p>Классический борщ на говяжьем бульоне со свёклой, капустой и сметаной. Насыщенный вкус и яркий цвет.</p>
+                <div class="meta"><span class="chip">🔥 320 ккал</span></div>
+            </div>
+            <div class="card-actions">
+                    <a class="btn btn-light btn-sm" href="recipe-edit.html">✏️ Изменить</a>
+                    <button class="btn btn-danger btn-sm" type="button" data-delete="Борщ">🗑 Удалить</button>
+                </div>
+        </article>
+            <!-- Пусто: <p class="empty">У вас пока нет рецептов</p> -->
+        </div>
+
+        <!-- Модальное окно подтверждения удаления -->
+        <div class="modal" id="delete-modal" hidden>
+            <div class="modal-box" role="dialog" aria-modal="true">
+                <h2>Удалить рецепт?</h2>
+                <p>Рецепт «<strong data-modal-title></strong>» будет удалён без возможности восстановления.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-light" type="button" data-close>Отмена</button>
+                    <button class="btn btn-danger-solid" type="button">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">© Кухни мира</footer>
+
+<script src="../prof/src/assets/js/app.js"></script>
+</body>
+</html>
